@@ -28,4 +28,5 @@
 
     - name: Run .osx dotfiles
       when: configure_osx
-      command: "~/.osx --no-restart"
+      command: "/bin/bash .osx --no-restart"
+      become: true
