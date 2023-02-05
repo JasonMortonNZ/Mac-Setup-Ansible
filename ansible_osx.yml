@@ -1,0 +1,31 @@
+---
+- hosts: all 
+
+  vars_files:
+    - config.yml
+
+  tasks:
+    - name: Install homebrew taps, casks and packages
+      include_role:
+        name: geerlingguy.mac.homebrew
+
+    - name: Ensure homebrew bin is in PATH
+      ansible.builtin.lineinfile:
+        path: /etc/paths
+        state: present
+        line: '/opt/homebrew/bin'
+      become: true
+      become_user: root
+
+    - name: Configure OSX Dock (add/remove items)
+      when: configure_dock
+      include_role:
+        name: geerlingguy.mac.dock
+
+    - name: Install dotfiles
+      when: configure_dotfiles
+      command: "cd ~ && curl -Lks https://raw.githubusercontent.com/JasonMortonNZ/dotfiles/master/.dotfiles/bin/install.sh | /bin/bash"
+
+    - name: Run .osx dotfiles
+      when: configure_osx
+      command: "~/.osx --no-restart"

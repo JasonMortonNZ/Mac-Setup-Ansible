@@ -1,0 +1,8 @@
+#!/bin/sh
+xcode-select --install
+sudo xcodebuild -license
+pip3 install --ignore-installed ansible
+PYTHON_VERSION=$(python3 -V | awk '{print substr($2,1,3);exit}')
+USER=$(whoami)
+export PATH=$PATH:/Users/$USER/Library/Python/$PYTHON_VERSION/bin
+ansible --version

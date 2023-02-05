@@ -1,0 +1,39 @@
+---
+
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: true
+configure_dock: true
+
+dotfiles_git_repo: "https://github.com/JasonMortonNZ/dotfiles.git"
+
+dockitems_remove:
+  - Notes
+  - TextEdit
+  - Launchpad
+  - Terminal
+  - Safari
+  - Podcasts
+  - TV
+  - 'App Store'
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_apps:
+  - iterm2
+  - brave-browser
+  - firefox
+
+homebrew_installed_packages:
+  - pv
+  - wget
+  - git
+  - openssl
+  - curl
+  - sqlite
+  - awk
+  - neovim
+  - php
+  - composer
