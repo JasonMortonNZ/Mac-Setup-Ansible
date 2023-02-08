@@ -25,6 +25,7 @@ homebrew_taps:
 
 homebrew_cask_apps:
   - iterm2
+  - alacritty
   - brave-browser
   - firefox
   - phpstorm
@@ -42,6 +43,7 @@ homebrew_installed_packages:
   - composer
   - node
   - mysql
+  - redis
 
 composer_packages:
   - laravel/valet
