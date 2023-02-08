@@ -9,6 +9,16 @@
       include_role:
         name: geerlingguy.mac.homebrew
 
+    - name: Install pecl extensions (xdebug)
+      shell: "pecl install xdebug"
+      when: run_pecl
+
+    - name: Install global composer packages
+      composer:
+        command: require
+        global_command: yes
+      loop: "{{ composer_packages }}"
+
     - name: Ensure homebrew bin is in PATH
       ansible.builtin.lineinfile:
         path: /etc/paths

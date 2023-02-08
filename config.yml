@@ -5,6 +5,8 @@ configure_terminal: true
 configure_osx: true
 configure_dock: true
 
+run_pecl: false
+
 dotfiles_git_repo: "https://github.com/JasonMortonNZ/dotfiles.git"
 
 dockitems_remove:
@@ -25,6 +27,7 @@ homebrew_cask_apps:
   - iterm2
   - brave-browser
   - firefox
+  - phpstorm
 
 homebrew_installed_packages:
   - pv
@@ -37,3 +40,8 @@ homebrew_installed_packages:
   - neovim
   - php
   - composer
+  - node
+  - mysql
+
+composer_packages:
+  - laravel/valet
