@@ -29,10 +29,14 @@ homebrew_cask_apps:
   - brave-browser
   - firefox
   - phpstorm
+  - alfred
+  - tableplus
+  - visual-studio-code
 
 homebrew_installed_packages:
   - pv
   - wget
+  - tmux
   - git
   - openssl
   - curl
